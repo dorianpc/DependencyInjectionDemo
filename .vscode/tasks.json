@@ -1,0 +1,90 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "dependsOn": [
+                "build-client",
+                "build-dataaccess",
+                "copy-dll"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build-client",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/DependencyInjectionDemo.Client/DependencyInjectionDemo.Client.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/DependencyInjectionDemo.Client/DependencyInjectionDemo.Client.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/DependencyInjectionDemo.Client/DependencyInjectionDemo.Client.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build-dataaccess",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/DependencyInjectionDemo.SqlServerDataAccess/DependencyInjectionDemo.SqlServerDataAccess.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "delete-dll",
+            "command": "rm",
+            "type": "shell",
+            "args": [
+                "${workspaceFolder}/DependencyInjectionDemo.Client/bin/Debug/netcoreapp3.0/DependencyInjectionDemo.Sql*DataAccess.dll"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "copy-dll",
+            "command": "cp",
+            "type": "shell",
+            "args": [
+                "${workspaceFolder}/DependencyInjectionDemo.SqlServerDataAccess/bin/Debug/netcoreapp3.0/DependencyInjectionDemo.SqlServerDataAccess.dll",
+                "${workspaceFolder}/DependencyInjectionDemo.Client/bin/Debug/netcoreapp3.0/DependencyInjectionDemo.SqlServerDataAccess.dll"
+            ],
+            "group": "build",
+            "dependsOn": [
+                "delete-dll"
+            ],
+            "problemMatcher": []
+        },
+    ]
+}
