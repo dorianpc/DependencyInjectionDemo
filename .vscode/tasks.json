@@ -57,7 +57,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/DependencyInjectionDemo.SqlServerDataAccess/DependencyInjectionDemo.SqlServerDataAccess.csproj",
+                "${workspaceFolder}/DependencyInjectionDemo.SqliteDataAccess/DependencyInjectionDemo.SqliteDataAccess.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -77,8 +77,8 @@
             "command": "cp",
             "type": "shell",
             "args": [
-                "${workspaceFolder}/DependencyInjectionDemo.SqlServerDataAccess/bin/Debug/netcoreapp3.0/DependencyInjectionDemo.SqlServerDataAccess.dll",
-                "${workspaceFolder}/DependencyInjectionDemo.Client/bin/Debug/netcoreapp3.0/DependencyInjectionDemo.SqlServerDataAccess.dll"
+                "${workspaceFolder}/DependencyInjectionDemo.SqliteDataAccess/bin/Debug/netcoreapp3.0/DependencyInjectionDemo.SqliteDataAccess.dll",
+                "${workspaceFolder}/DependencyInjectionDemo.Client/bin/Debug/netcoreapp3.0/DependencyInjectionDemo.SqliteDataAccess.dll"
             ],
             "group": "build",
             "dependsOn": [
