@@ -18,5 +18,5 @@ Same table is required with Sql Server.
 
 For testing, I composed the vscode tasks.json file with tasks to delete and copy any of the 2 data access dlls into the client directory, which are dynamically loaded with reflection and registered with the DI container.
 
-This solution is for educational purposes. 
+This solution is for educational purposes only. 
 
