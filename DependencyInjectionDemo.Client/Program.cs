@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Autofac;
 using DependencyInjectionDemo.DataAccess;
+using System.Data;
 
 namespace DependencyInjectionDemo.Client
 {
